@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+  box-sizing: border-box; /* if we add any border or padding it doesn't affect overall size of the element */
+}
+body{
+    font-family: "Poppins",sans-serif;
+    color:white;
+    margin:0;
+    background-color: #22254b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MovieApp{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie{
+  width:300px;
+  margin:1rem;
+  background-color: #373b6977;
+  border-radius: 3px;
+  box-shadow: 3px 3px 10px 1px black;
+  overflow: hidden;
+  position:relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie:hover .movie-description{
+  transform: translateY(0%);
+}
+
+.movie img{
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+.movie-info{
   display: flex;
-  flex-direction: column;
+  padding:1rem;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-info h3{
+  margin:0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-description{
+  background-color: #373b69ca;
+  position: absolute;
+  padding:1rem;
+  bottom:0;
+  left:0;
+  right:0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  overflow: auto;
+  max-height: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 3px 3px 10px 1px black;
 }
+
+.movie-description img {
+  max-width:45px;
+  max-height:45px;
+  float:right;
+  filter:invert(100%);
+  cursor:pointer
+}
+
+.Head{
+  background-color: #373b6977;
+  padding:1rem;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.search{
+  font-family: inherit;
+  border: 2px solid #22254b;
+  border-radius: 50px;
+  background-color: transparent;
+  font-size: 1rem;
+  color:white;
+  padding:0.5rem 1.5rem;
+}
+
+.search:focus{
+  outline:none;
+}
+
+.avg{
+  background-color: #22254b;
+  padding: 0.5rem;
+  padding:0.5rem;
+  font-weight: bold;
+}
+
+.avg.green{
+  color: rgb(1, 197, 1);
+}
+.avg.orange{
+  color:orange
+}
+.avg.red{
+  color: red;
+}
+
